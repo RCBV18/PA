@@ -1,0 +1,138 @@
+Unit 1
+
+1.	Q: What is a microcontroller?
+A: A microcontroller is an integrated chip designed to perform specific control tasks in embedded systems.
+2.	Q: How does a microcontroller differ from a microprocessor?
+A: A microcontroller has built-in memory and peripherals, while a microprocessor requires external components.
+3.	Q: What is one criterion for selecting a microcontroller?
+A: One key criterion is the number and type of I/O ports and peripherals available.
+4.	Q: Name one microcontroller from the PIC18 series.
+A: PIC18F458 is an example of a PIC18 series microcontroller.
+5.	Q: What type of memory is used for storing programs in PIC microcontrollers?
+A: Programmable ROM (Flash memory) is used for program storage.
+6.	Q: What does the Program Counter do in a PIC18 microcontroller?
+A: It holds the address of the next instruction to be executed.
+7.	Q: What is bank switching in PIC18?
+A: Bank switching allows access to different memory banks using special registers.
+8.	Q: What is an addressing mode?
+A: An addressing mode defines how the operand of an instruction is accessed.
+9.	Q: What is the purpose of a watchdog timer?
+A: It resets the microcontroller if the program becomes unresponsive.
+10.	Q: What does the brownout reset feature do?
+A: It resets the microcontroller when the supply voltage drops below a safe level.
+
+Unit 2
+1.	Q: What is the main function of an I/O port in a microcontroller?
+A: It allows the microcontroller to interact with external devices by reading inputs and sending outputs.
+2.	Q: What is I/O port structure in PIC18?
+A: It consists of TRIS (data direction), PORT (read), and LAT (write) registers.
+3.	Q: How is an I/O pin set as input or output?
+A: By configuring the TRIS register: '1' for input, '0' for output.
+4.	Q: What is I/O bit manipulation programming?
+A: It involves setting or clearing specific bits of a port to control individual I/O pins.
+5.	Q: Give an example of setting a pin high using bit manipulation in Embedded C.
+A: LATBbits.LATB0 = 1; sets pin RB0 high.
+6.	Q: What is a Timer in a microcontroller?
+A: A Timer is a hardware feature used for counting clock pulses or generating precise delays.
+7.	Q: Which registers are commonly used for timer operations in PIC18?
+A: TMRx, TCON, and PRx registers are used.
+8.	Q: What does a prescaler do in timer configuration?
+A: It divides the input clock to slow down the timer count rate.
+9.	Q: How is delay calculated using a timer?
+A: Delay = (Prescaler × Timer count × Instruction cycle time).
+10.	Q: How is a timer started in Embedded C for PIC18?
+A: By setting the appropriate control bits in the TCON register, e.g., T1CONbits.TMR1ON = 1;.
+
+Unit 3
+
+1.	Q: What is the main difference between polling and interrupts?
+A: Polling continuously checks a condition, while interrupts respond immediately to events.
+2.	Q: What does IVT stand for in PIC microcontrollers?
+A: IVT stands for Interrupt Vector Table.
+3.	Q: What is the first step in executing an interrupt?
+A: The current program counter value is saved before jumping to the ISR (Interrupt Service Routine).
+4.	Q: Name one source of interrupts in PIC18.
+A: Timer overflow is a common source of interrupts.
+5.	Q: How are interrupts enabled or disabled in PIC18?
+A: Using interrupt enable bits like INTCONbits.GIE for global interrupt enable.
+6.	Q: What is the purpose of interrupt registers?
+A: They control, enable, and flag interrupt events.
+7.	Q: How is interrupt priority handled in PIC18?
+A: PIC18 supports high and low priority levels for managing multiple interrupts.
+8.	Q: What is required to program a timer interrupt?
+A: Enable the timer interrupt flag, configure the timer, and write the ISR.
+9.	Q: How is a 16x2 LCD interfaced in 8-bit mode?
+A: By connecting 8 data lines and 3 control lines (RS, RW, EN) to the microcontroller.
+10.	Q: How is a 4x4 matrix keyboard interfaced with a microcontroller?
+A: By connecting 4 rows and 4 columns to I/O ports and scanning them via code.
+
+Unit 4
+•  Q: What does CCP stand for in PIC microcontrollers?
+A: CCP stands for Capture/Compare/PWM.
+•  Q: What is the function of the Capture mode in CCP?
+A: It records the timer value when a signal edge is detected.
+•  Q: What does Compare mode do in CCP?
+A: It generates an event when the timer matches a set value.
+•  Q: What is PWM used for in microcontrollers?
+A: PWM (Pulse Width Modulation) is used to control devices like motors and LEDs.
+•  Q: How does PWM control DC motor speed?
+A: By varying the duty cycle of the PWM signal.
+•  Q: What type of signal is used to control a stepper motor?
+A: A sequence of digital pulses applied to the motor coils.
+•  Q: What is RS232 used for?
+A: RS232 is a standard protocol for serial communication between devices.
+•  Q: How does I2C communication work?
+A: I2C uses two lines (SDA and SCL) for communication between a master and multiple slaves.
+•  Q: What is the key feature of SPI protocol?
+A: SPI is a full-duplex, high-speed communication protocol using separate lines for MISO, MOSI, SCLK, and SS.
+•  Q: Which function is commonly used in Embedded C for serial communication via UART?
+A: putch() or printf() is used for sending data via UART.
+
+Unit 5
+Here are 10 single-line questions and answers based on the Interfacing section you provided:
+1.	Q: What is the function of ADC0808 when interfaced with PIC?
+A: ADC0808 converts multiple analog inputs into digital signals readable by the PIC.
+2.	Q: What is the purpose of DAC0808 in a PIC-based system?
+A: DAC0808 converts digital values from PIC into analog voltages.
+3.	Q: How is data from an analog temperature sensor read by a PIC?
+A: The analog output of the sensor is connected to an ADC input of the PIC.
+4.	Q: What protocol is used for digital temperature sensors like LM75 with PIC?
+A: I2C protocol is used for communication.
+5.	Q: What is the role of the I2C protocol in PIC microcontroller interfacing?
+A: I2C allows serial communication with multiple devices using two wires (SDA and SCL).
+6.	Q: What is the DS1306 module used for in embedded systems?
+A: DS1306 provides real-time clock and calendar functionalities.
+7.	Q: How is DS1306 RTC interfaced with PIC microcontroller?
+A: It is interfaced using the I2C protocol.
+8.	Q: What is EEPROM used for in PIC-based applications?
+A: EEPROM stores non-volatile data that must be retained even when power is off.
+9.	Q: How does PIC communicate with EEPROM memory?
+A: Communication is done via the SPI protocol.
+10.	Q: What are the typical SPI lines used for EEPROM interfacing?
+A: SPI uses MISO, MOSI, SCK, and CS (chip select) lines.
+Want a full revision sheet with all Q&A from every section?
+
+Unit 6
+•  Q: What is the core idea behind RISC design philosophy?
+A: RISC focuses on a small set of simple instructions for faster execution.
+•  Q: What does ARM stand for?
+A: ARM stands for Advanced RISC Machines.
+•  Q: Name three versions of ARM processors.
+A: ARM7, ARM9, and ARM11.
+•  Q: Mention one key feature of the ARM processor.
+A: ARM processors offer low power consumption with high performance.
+•  Q: Why are ARM processors suitable for embedded systems?
+A: They are efficient, compact, and support low-power operation, ideal for embedded use.
+•  Q: What is the ARM7 dataflow model used for?
+A: It represents how data moves between registers and memory during execution.
+•  Q: What is the programmer's model in ARM architecture?
+A: It defines the available registers and their functions from a coder’s perspective.
+•  Q: What is the function of CPSR in ARM?
+A: CPSR (Current Program Status Register) holds the current state and flags of the processor.
+•  Q: What does SPSR stand for in ARM processors?
+A: SPSR stands for Saved Program Status Register, used to store the previous CPSR during exceptions.
+•  Q: What is one major difference between PIC and ARM processors?
+A: PIC is simpler and suited for basic control tasks, while ARM is more powerful and handles complex operations.
+
+
+
